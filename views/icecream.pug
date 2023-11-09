@@ -3,13 +3,8 @@ extends layout
 block content
   h1= title
 
-    - var results=[{FLAVOUR:"Chocolate",SERVING_SIZE:1,CALORIES_PER_SERVING:150},{FLAVOUR:"Strawberry",SERVING_SIZE:2,CALORIES_PER_SERVING:200},{FLAVOUR:"Vanilla",SERVING_SIZE:4,CALORIES_PER_SERVING:250}]
+    - var items=results
   div(class="container-fluid")
   div(class="row")
-   each g,index in results
-    div(class="col-sm-2" onclick=`buy(${index})`) #{g.FLAVOUR}, #{g.SERVING_SIZE}, #{g.CALORIES_PER_SERVING}
-    script.
-        function buy(a)
-        {
-            alert(`You purchased Item ${a+1}`)
-        }
+   each g in items
+    div(class="col-sm-2" ) #{g.FLAVOUR}, #{g.SERVING_SIZE}, #{g.CALORIES_PER_SERVING}

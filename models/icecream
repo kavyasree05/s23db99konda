@@ -1,0 +1,7 @@
+const mongoose = require("mongoose")
+const icecreamSchema = mongoose.Schema({
+FLAVOUR: String,
+SERVING_SIZE: Number,
+CALORIES_PER_SERVING: Number
+})
+module.exports = mongoose.model("icecream",icecreamSchema)
