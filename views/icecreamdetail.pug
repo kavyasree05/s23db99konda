@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+
+  - let icecreamid = toShow._id
+  - let icecream_FLAVOUR = toShow.FLAVOUR
+  - let icecreamSERVING_SIZE = toShow.SERVING_SIZE
+  - let icecreamCALORIES_PER_SERVING= toShow.CALORIES_PER_SERVING
+
+  div
+    div.row
+      div(class='icecreamAttr mr-4') icecream ID is:
+      div #{icecreamid}
+
+    div.row
+      div(class='icecreamAttr mr-4') FLAVOUR is:
+      div #{icecream_FLAVOUR}
+
+    div.row
+      div(class='icecreamAttr mr-4') SERVING_SIZE is:
+      div #{icecreamSERVING_SIZE}
+
+    div.row
+      div(class='icecreamAttr mr-4') CALORIES_PER_SERVING:
+      div #{icecreamCALORIES_PER_SERVING}
