@@ -6,4 +6,5 @@ router.get('/', icecream_controlers.icecream_view_all_Page );
 router.get('/detail', icecream_controlers.icecream_view_one_Page);
 router.get('/create', icecream_controlers.icecream_create_Page);
 router.get('/update', icecream_controlers.icecream_update_Page);
+router.get('/delete', icecream_controlers.icecream_delete_Page);
 module.exports = router;
