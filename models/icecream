@@ -1,7 +1,21 @@
+const { Double } = require("mongodb")
 const mongoose = require("mongoose")
 const icecreamSchema = mongoose.Schema({
-FLAVOUR: String,
-SERVING_SIZE: Number,
-CALORIES_PER_SERVING: Number
-})
-module.exports = mongoose.model("icecream",icecreamSchema)
+    icecream_NAME: {
+        type: String,
+        required: true
+    },
+    icecream_AGE: {
+        type: Number,
+        required: true
+        
+    },
+    icecream_COLOR: {
+        type: String,
+        required: true,
+        min: 0,
+        max: 50000
+    }
+});
+module.exports = mongoose.model("icecream", 
+icecreamSchema)

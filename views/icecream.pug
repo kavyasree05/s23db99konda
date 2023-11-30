@@ -4,6 +4,7 @@ block content
   h1= title
 
   - var items = results
+  a(class="btn btn-success" href="/icecream/create") Create
   div(class="container-fluid")
     div(class="row")
       each g in items
@@ -11,6 +12,8 @@ block content
           div(class="col-sm-2", onclick=`buy(${g})`)
             | #{g.FLAVOUR}, #{g.SERVING_SIZE}, #{g.CALORIES_PER_SERVING} // Fix variable name
             button.btn(class="btn-primary ml-1", onclick=`dispatch('${destination}')`) Update
+            button.btn(class="btn-danger ml-1", onclick=`dispatch('${destination}')`) Delete
+            button.btn(class="btn-info ml-1", onclick=`dispatch('${destination}')`) Details
 
   script.
     function buy(a) {
