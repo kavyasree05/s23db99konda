@@ -3,8 +3,19 @@ extends layout
 block content
   h1= title
 
-    - var items=results
+  - var items = results
   div(class="container-fluid")
-  div(class="row")
-   each g in items
-    div(class="col-sm-2" ) #{g.FLAVOUR}, #{g.SERVING_SIZE}, #{g.CALORIES_PER_SERVING}
+    div(class="row")
+      each g in items
+          - let destination = `/icecream/update?id=${g._id}` // Fix variable name and template string
+          div(class="col-sm-2", onclick=`buy(${g})`)
+            | #{g.FLAVOUR}, #{g.SERVING_SIZE}, #{g.CALORIES_PER_SERVING} // Fix variable name
+            button.btn(class="btn-primary ml-1", onclick=`dispatch('${destination}')`) Update
+
+  script.
+    function buy(a) {
+      alert(`You purchased Item ${a.FLAVOUR}`); // Fix the alert message
+    }
+    function dispatch(path) {
+      window.location.href = path;
+    }
